@@ -15,3 +15,12 @@ vue add babel
 npm install --save-dev nodemon concurrently
 npm run build
 npm run dev
+
+
+6) Not necessary, but to format the code using Prettier first install by running:
+
+npm install --save-dev --save-exact prettier
+
+7) You can then format the src files (where we write our code) by running:
+
+npx prettier --write client/src
