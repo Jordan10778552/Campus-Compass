@@ -1,0 +1,35 @@
+{
+  "name": "campus-compass",
+  "version": "1.0.0",
+  "description": "Delta team project\r A desktop app that helps people find their way around campus!",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js --ignore 'clint/'",
+    "client": "npm run serve --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "build": "npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jordan10778552/Campus-Compass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jordan10778552/Campus-Compass/issues"
+  },
+  "homepage": "https://github.com/Jordan10778552/Campus-Compass#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
