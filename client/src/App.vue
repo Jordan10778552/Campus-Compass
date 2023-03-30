@@ -1,23 +1,27 @@
 <template>
    <div id="app">
-      <Login></Login>
+      <header>Logged in as: {{ userName }}</header>
+      <HomePage></HomePage>
+      <Login @user-emit="updateUser"></Login>
       <Map></Map>
-      <Schedule></Schedule>
+
    </div>
 </template>
 
 <script>
+import HomePage from './components/HomePage.vue'
 import Login from './components/Login.vue'
 import Map from './components/Map.vue'
-import Schedule from './components/Schedule.vue'
+
 
 import axios from 'axios'
 export default {
    name: 'App',
    components: {
+      HomePage,
       Login,
       Map,
-      Schedule,
+      
    },
    data() {
       return {
@@ -25,7 +29,12 @@ export default {
          description: '',
          editedDescription: '',
          selected: {},
+         userName: '',
       }
+   },
+   updateUser(userName){
+
+      this.userName = userName;
    },
    async mounted() {
       const response = await axios.get('api/studentInfo/')

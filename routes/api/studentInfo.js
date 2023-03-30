@@ -16,6 +16,22 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:studentId/:password', async (req, res) => {
+    const { studentId, password } = req.params;
+    
+   try {
+    const studentInfo = await StudentInfo.findOne({ studentId, password });
+    if (!studentInfo) {
+        
+       return res.status(404).send({ message: 'No profile for this student ID and password exists.' });
+    }
+    res.send(studentInfo);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ message: 'Server error.' });
+  }
+})
+
 router.post('/', async (req, res) => {
     const newStudentInfo = new StudentInfo(req.body)
     try {
