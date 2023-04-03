@@ -12,6 +12,14 @@ const StudentInfoSchema = new Schema({
     studentId: {
         type: String,
         required: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+    schedule: {
+        type: [String],
+        default: []
     }
 })
 

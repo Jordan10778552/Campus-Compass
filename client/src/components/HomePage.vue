@@ -1,10 +1,10 @@
 <template>
-   <h1>Schedule</h1>
+   <h1>Home Page</h1>
 </template>
 
 <script>
 export default {
-   name: 'ScheduleComponent',
+   name: 'HomePageComponent',
    data() {
       return {}
    },
