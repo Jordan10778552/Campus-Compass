@@ -26,25 +26,25 @@
       
    </div>
    <div class="createProfile" v-show="showCreateProfile">
-      
-         <div id="firstname">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" v-model="firstName">
+      <form>
+         <div id="firstname" class="input-container">
+            <label for="firstName" style="display: inline-block; width: 100%;">First Name:</label>
+            <input type="text" id="firstName" v-model="firstName" style="display: inline-block; width: 400px; height: 25px">
          </div>
-         <div id="lastName">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" v-model="lastName">
+         <div id="lastName" class="input-container">
+            <label for="lastName" style="display: inline-block; width: 100%;">Last Name:</label>
+            <input type="text" id="lastName" v-model="lastName" style="display: inline-block; width: 400px; height: 25px">
          </div>
-         <div id="studentId">
-            <label for="studentId">Student ID:</label>
-            <input type="text" id="studentId" v-model="studentId">
+         <div id="studentId" class="input-container">
+            <label for="studentId" style="display: inline-block; width: 100%;">Student ID:</label>
+            <input type="text" id="studentId" v-model="studentId" style="display: inline-block; width: 400px; height: 25px">
          </div>
-         <div id="password">
-            <label for="pasword">Password:</label>
-            <input type="password" id="password" v-model="password">
+         <div id="password" class="input-container">
+            <label for="pasword" style="display: inline-block; width: 100%;">Password:</label>
+            <input type="password" id="password" v-model="password" style="display: inline-block; width: 400px; height: 25px">
          </div>
-      
-      <button @click="createProfile">Create Profile!</button>
+         <button class="create-profile-btn" @click="createProfile">Create Profile!</button>
+      </form>
    </div>
    <div id="profileSavedMessage" v-show="profileSavedMessage">Your profile has been saved!<br>Please return to Login</div>
 </template>
@@ -128,33 +128,76 @@ export default {
   width: 400px;
 }
 
-form {
+.createProfile {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+form {
+  display: block;
+  justify-content: center;
   flex-direction: column;
 }
 
 label {
+  display: block;
+  text-align: center;
+  margin-right: 5px;
   margin-bottom: 5px;
   font-weight: bold;
   text-align: left;
 }
 
+.input-box {
+  width: 50%;
+  height: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.create-profile-btn {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.input-container input {
+  display: inline-block;
+  width: 60%;
+  height: 25px;
+  margin-left: 10px;
+}
+
+
+input[type="loginId"],
 input[type="text"],
-input[type="password"],
-input[type="loginId"] {
+input[type="password"] {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
   width: 100%;
-}
-
-#loginId,
-#loginPassword,
-#studentId,
-#password {
-  width: 70%;
-  margin-left: 5%;
 }
 
 #loginId-label,
