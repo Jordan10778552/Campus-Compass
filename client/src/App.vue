@@ -4,6 +4,7 @@
       <HomePage></HomePage>
       <Login @user-emit="updateUser"></Login>
       <Map></Map>
+      <footer></footer>
 
    </div>
 </template>
@@ -83,4 +84,24 @@ export default {
 .icon {
    cursor: pointer;
 }
+header {
+   color: white;
+   text-align: left;
+   background-color: darkgreen;
+   border-bottom: 2px solid black;
+   width: 100%;
+   padding: 10px;
+}
+
+footer {
+   position: relative;
+   bottom: 0;
+   text-align: left;
+   background-color: darkgreen;
+   border-top: 2px solid black;
+   width: 100%;
+   padding: 10px;
+}
+
+
 </style>
