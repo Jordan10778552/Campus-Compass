@@ -35,7 +35,7 @@
             <input type="text" id="lastName" v-model="lastName">
          </div>
          <div id="studentId">
-            <label for="studentId">Studnet ID:</label>
+            <label for="studentId">Student ID:</label>
             <input type="text" id="studentId" v-model="studentId">
          </div>
          <div id="password">
@@ -116,7 +116,6 @@ export default {
    },
 }
 </script>
-
 <style scoped>
    
 </style>
